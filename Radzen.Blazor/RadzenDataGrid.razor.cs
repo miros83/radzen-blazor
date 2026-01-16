@@ -1935,7 +1935,7 @@ namespace Radzen.Blazor
 
             view = viewListQueryable
                 .Where(i => childData.ContainsKey(i) && (childData[i].Data ?? Enumerable.Empty<TItem>()).AsQueryable().Where<TItem>(allColumns).Any()
-                    || viewListQueryable.Where<TItem>(allColumns).Contains(i));
+                    || viewListQueryable.Contains(i));
 
             return view;
         }
